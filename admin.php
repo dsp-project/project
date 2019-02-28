@@ -1032,7 +1032,7 @@ function configSettings()
     echo "<div align=\"center\">";
     echo "<table width=\"100%\" border=1 bordercolor=\"".$cfg["table_admin_border"]."\" cellpadding=\"2\" cellspacing=\"0\" bgcolor=\"".$cfg["table_data_bg"]."\">";
     echo "<tr><td bgcolor=\"".$cfg["table_header_bg"]."\" background=\"themes/".$cfg["theme"]."/images/bar.gif\">";
-    echo "<img src=\"images/properties.png\" width=18 height=13 border=0>&nbsp;&nbsp;<font class=\"title\">TorrentFlux Settings</font>";
+    echo "<img src=\"images/properties.png\" width=18 height=13 border=0>&nbsp;&nbsp;<font class=\"title\">Torrent Settings</font>";
     echo "</td></tr><tr><td align=\"center\">";
 
 ?>
@@ -1255,7 +1255,7 @@ function configSettings()
         <tr>
             <td align="left" width="350" valign="top"><strong>Extra BitTornado Commandline Options</strong><br>
             DO NOT include --max_upload_rate, --minport, --maxport, --max_uploads here as they are
-            included by TorrentFlux settings above:
+            included by Torrent settings above:
             </td>
             <td valign="top">
                 <input name="cmd_options" type="Text" maxlength="254" value="<?php    echo($cfg["cmd_options"]); ?>" size="55">
@@ -1410,7 +1410,7 @@ function configSettings()
         </tr>
         <tr>
             <td align="left" width="350" valign="top"><strong>Minutes to Keep User Online Status</strong><br>
-            Number of minutes before a user status changes to offline after leaving TorrentFlux:
+            Number of minutes before a user status changes to offline after leaving Torrent:
             </td>
             <td valign="top">
                 <input name="minutes_to_keep" type="Text" maxlength="2" value="<?php    echo($cfg["minutes_to_keep"]); ?>" size="2">
@@ -1563,7 +1563,7 @@ function updateConfigSettings()
             $settings = $_POST;
 
             saveSettings($settings);
-            AuditAction($cfg["constants"]["admin"], " Updating TorrentFlux Settings");
+            AuditAction($cfg["constants"]["admin"], " Updating Torrent Settings");
 
         // if enabling Start QManager
         if($_POST["AllowQueing"])
@@ -1578,7 +1578,7 @@ function updateConfigSettings()
          $settings = $_POST;
 
              saveSettings($settings);
-             AuditAction($cfg["constants"]["admin"], " Updating TorrentFlux Settings");
+             AuditAction($cfg["constants"]["admin"], " Updating Torrent Settings");
     }
 
     $continue = getRequestVar('continue');
@@ -2019,7 +2019,7 @@ function updateSearchSettings()
     }
 
     saveSettings($settings);
-    AuditAction($cfg["constants"]["admin"], " Updating TorrentFlux Search Settings");
+    AuditAction($cfg["constants"]["admin"], " Updating Torrent Search Settings");
 
     $searchEngine = getRequestVar('searchEngine');
     if (empty($searchEngine)) $searchEngine = $cfg["searchEngine"];
